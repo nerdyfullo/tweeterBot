@@ -22,24 +22,13 @@ auth.set_access_token("ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
 # Create the API object
 api = tweepy.API(auth)
 
-# Create a new tweet
+# Create a new reply
 status = input()
 
-# Select the images to be uploaded with your tweet
-# in my case it's 1.png & 2.png
-# feel free to rename
-# NOTE: IMAGES NEED TO BE IN THE SAME FOLDER AS THE PROGRAM
-filenames = ['1.jpg', '2.jpg']
-media_ids = []
-for filename in filenames:
-     res = api.media_upload(filename)
-     media_ids.append(res.media_id)
+# @Username - username of who's tweet you're replying to
+username = input()
 
-status = input()
+# tweetID - ID of the tweet you're replying to
+tweetId = input("Insert tweet id:")
 
-# Send the tweet, along side the images
-api.update_status(status, media_ids=media_ids)
-
-
-print("Your has been sent. check the dev in here:\nhttps://instagram.com/nerdyfullo")
-input("Press any key to continue")
+api.update_status(status, '@'username, tweetId)
