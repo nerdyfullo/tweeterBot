@@ -23,12 +23,14 @@ auth.set_access_token("ACCESS_TOKEN", "ACCESS_TOKEN_SECRET")
 api = tweepy.API(auth)
 
 # Create a new reply
-status = input()
+status = input("Type Your Reply:")
 
 # @Username - username of who's tweet you're replying to
-username = input()
+username = input("Type Username of who you replying to (including @ sign):")
 
 # tweetID - ID of the tweet you're replying to
 tweetId = input("Insert tweet id:")
 
-api.update_status(status, '@'username, tweetId)
+reply = status + " " + username
+
+api.update_status(reply, tweetId)
