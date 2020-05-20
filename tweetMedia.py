@@ -35,11 +35,9 @@ for filename in filenames:
      res = api.media_upload(filename)
      media_ids.append(res.media_id)
 
-status = input()
-
 # Send the tweet, along side the images
 api.update_status(status, media_ids=media_ids)
 
 
-print("Your has been sent. check the dev in here:\nhttps://instagram.com/nerdyfullo")
+print("Your tweet with media has been sent. check the dev in here:\nhttps://instagram.com/nerdyfullo")
 input("Press any key to continue")

@@ -34,3 +34,6 @@ tweetId = input("Insert tweet id:")
 reply = status + " " + username
 
 api.update_status(reply, tweetId)
+
+print("Your reply has been sent. check the dev in here:\nhttps://instagram.com/nerdyfullo")
+input("Press any key to continue")
